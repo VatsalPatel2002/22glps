@@ -1,0 +1,30 @@
+<div class="formarea">
+
+    <form [formGroup]="loginform" (ngSubmit)="onLogin()"> 
+        <mat-card>
+    
+            <h1>Login Form</h1>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="vat123@gmail.com" name="email" formControlName="email" required>
+                    <!-- <mat-icon>mail</mat-icon>                   -->
+               <mat-error *ngIf="loginform.get('email')?.hasError('email')">Invalid email</mat-error>
+              </mat-form-field>
+              
+      
+              
+              <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password">
+                  <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+              </mat-form-field>
+    
+              <div class="loginbutton">
+                <button type="submit" mat-raised-button color="accent" [disabled]="loginform.invalid">Login</button>
+              </div>
+    
+        </mat-card>
+    </form>
+</div>

@@ -1,0 +1,74 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <p>GLPS-22</p>
+
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Admin</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon class="icon">home</mat-icon>
+      <span>Dashboard</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span>About Us</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button">
+      <mat-icon>contact_support</mat-icon>
+      <span>Contact Us</span>
+    </button>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+
+    <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+      </button>
+      <span>Dashboard</span>
+    </mat-toolbar>
+
+
+    <div class="content mat-elevation-z4">
+      <mat-card class="card">
+        <img class="im" src=" assets/img/photo1.jpg" alt="" />
+      </mat-card>
+    </div>
+
+
+<!-- table     -->
+      <mat-card class="tableMatCard">
+        <div class="row1">
+          <div class="column">
+            <span class="tableSpan1">Village List</span>
+            <button class="tableButton">></button>
+          </div>
+          <div class="column">
+            <span class="tableSpan2">About Us</span>
+            <button class="tableButton">></button>
+          </div>
+          <div class="column">
+            <span class="tableSpan3">Help</span>
+            <button class="tableButton">></button>
+          </div>
+        </div>
+  
+        <div class="row2">
+          <div class="column21">
+            <span class="tableSpan4">Business Contacts & Details</span>
+            <button class="tableButton">></button>
+          </div>
+          <div class="column22">
+          <span class="tableSpan5">Contact Us</span>  
+          <button class="tableButton">></button>
+          </div>
+        </div>
+      </mat-card>
+   
+  </mat-sidenav-content>
+</mat-sidenav-container>

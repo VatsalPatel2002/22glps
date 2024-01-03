@@ -1,0 +1,25 @@
+mat-card {
+    padding-top: 20px;
+    margin:auto;
+    width: 40%;
+    text-align: left;
+}
+
+button{
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.signupbutton {
+    text-align: center;
+}
+
+h1 {
+    color: rgb(164, 94, 230);
+    text-align: center;
+}
+
+.formarea{
+    padding: 90px;
+    background-color: beige;
+}
