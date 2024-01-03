@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   })
 
-  constructor(private loginsvc: LoginService) { }
+  constructor(private loginsvc: LoginService, private router:Router) { }
 
   onLogin() {
     // console.log(this.loginform.value);
@@ -28,8 +29,8 @@ export class LoginComponent {
 
         if (response.msg == "Login Successfull.") {
           localStorage.setItem('form-data', JSON.stringify(this.loginform.value));
+          this.router.navigate(['/dashboard'])
           this.formRef.resetForm();
-
         } else {
           alert("password not matched")
         }
